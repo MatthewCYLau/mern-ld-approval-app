@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import Spinner from "../layout/Spinner";
 import CourseItem from "./CourseItem";
 import { getCourses } from "../../actions/course";
+import { ListGroup } from "react-bootstrap";
 
 const Courses = ({ getCourses, course: { courses, loading } }) => {
   useEffect(() => {
@@ -14,14 +15,17 @@ const Courses = ({ getCourses, course: { courses, loading } }) => {
     <Spinner />
   ) : (
     <Fragment>
-      <h1 className="large text-primary">Courses</h1>
+      <h1 className="large text-primary">All Courses</h1>
       <p className="lead">
-        <i className="fas fa-user" /> Welcome to the community
+        <i className="fas fa-book-open" />
+        View all courses signed-up by SE practitioners
       </p>
       <div className="courses">
-        {courses.map(course => (
-          <CourseItem key={course._id} course={course} />
-        ))}
+        <ListGroup>
+          {courses.map(course => (
+            <CourseItem key={course._id} course={course} />
+          ))}
+        </ListGroup>
       </div>
     </Fragment>
   );

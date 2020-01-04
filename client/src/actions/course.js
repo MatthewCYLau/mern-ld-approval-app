@@ -98,7 +98,7 @@ export const deleteCourse = id => async dispatch => {
 };
 
 // Add course
-export const addCourse = formData => async dispatch => {
+export const addCourse = (formData, history) => async dispatch => {
   const config = {
     headers: {
       "Content-Type": "application/json"
@@ -112,7 +112,7 @@ export const addCourse = formData => async dispatch => {
       type: ADD_COURSE,
       payload: res.data
     });
-
+    history.push("/dashboard");
     dispatch(setAlert("Course Created", "success"));
   } catch (err) {
     dispatch({

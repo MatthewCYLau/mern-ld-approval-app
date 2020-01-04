@@ -11,6 +11,10 @@ const AppNavbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         <i className="fas fa-user" />
         Dashboard
       </Nav.Link>
+      <Nav.Link href="/add-course">
+        <i className="fas fa-plus" />
+        Add Course
+      </Nav.Link>
       <Nav.Link href="/courses">
         <i className="fas fa-book-open" />
         All Courses

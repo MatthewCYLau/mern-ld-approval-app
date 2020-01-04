@@ -94,17 +94,19 @@ router.get("/:id", auth, async (req, res) => {
 // @desc     Edit a course
 // @access   Private
 router.patch("/:id", auth, async (req, res) => {
-  const { name, provider } = req.body;
+  const { name, provider, approved } = req.body;
 
   // Build course object
   const courseFields = {};
 
   if (name) courseFields.name = name;
   if (provider) courseFields.provider = provider;
+  if (approved != undefined || approved != null)
+    courseFields.approved = approved;
 
   try {
     let course = await Course.findOneAndUpdate(
-      { user: req.user.id },
+      { _id: req.params.id },
       courseFields,
       { new: true, upsert: true }
     );
