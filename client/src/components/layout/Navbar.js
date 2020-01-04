@@ -28,7 +28,7 @@ const AppNavbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   const guestLinks = (
     <Nav className="mr-auto">
-      <Nav.Link href="/register">Register</Nav.Link>
+      <Nav.Link href="/sign-up">Sign Up</Nav.Link>
       <Nav.Link href="/login">Login</Nav.Link>
     </Nav>
   );
@@ -36,7 +36,7 @@ const AppNavbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   return (
     <Navbar bg="light" expand="lg">
       <Navbar.Brand href="/">
-        <i className="fas fa-code" /> MERN Stack Boilerplate
+        <i className="fas fa-code" /> SE Learning and Development Portal
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

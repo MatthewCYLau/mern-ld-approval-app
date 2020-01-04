@@ -6,14 +6,18 @@ import { connect } from "react-redux";
 import { addLike, removeLike } from "../../actions/course";
 import { Badge } from "react-bootstrap";
 
-const CourseItem = ({ course: { _id, name, provider, date, approved } }) => (
+const CourseItem = ({
+  course: { _id, name, provider, date, approved, price }
+}) => (
   <div>
     <ListGroup.Item>
       <h3>{name}</h3>
       <p>Provider: {provider}</p>
+      <p>Price: {price}</p>
       <p className="course-date">
-        Added on <Moment format="YYYY/MM/DD">{date}</Moment>
+        Added on <Moment format="DD/MM/YYYY">{date}</Moment>
       </p>
+
       {approved ? (
         <Badge variant="success">Approved</Badge>
       ) : (

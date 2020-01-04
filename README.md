@@ -1,6 +1,6 @@
-# MERN stack boilerplate
+# SE Learning and Development Portal
 
-A boilerplate for building web app with the MERN stack, inspired by [this](https://github.com/bradtraversy/devconnector_2.0) project by Brad Traversy.
+A portal app to raise request for training courses, inspired by [this](https://github.com/bradtraversy/devconnector_2.0) project by Brad Traversy.
 
 ## Installation
 

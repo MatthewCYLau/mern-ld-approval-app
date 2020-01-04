@@ -27,12 +27,13 @@ const Login = ({ login, isAuthenticated }) => {
 
   return (
     <Fragment>
-      <h1>Sign In</h1>
+      <h1 className="text-primary">Login</h1>
       <p>
-        <i className="fas fa-user" /> Sign Into Your Account
+        <i className="fas fa-user" />
+        Login Your Account
       </p>
       <Form onSubmit={e => onSubmit(e)}>
-        <Form.Group controlId="formBasicEmail">
+        <Form.Group>
           <Form.Label>Email address</Form.Label>
           <Form.Control
             type="email"
@@ -43,7 +44,7 @@ const Login = ({ login, isAuthenticated }) => {
             required
           />
         </Form.Group>
-        <Form.Group controlId="formBasicPassword">
+        <Form.Group>
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
@@ -58,8 +59,8 @@ const Login = ({ login, isAuthenticated }) => {
           Login
         </Button>
       </Form>
-      <p>
-        Don't have an account? <Link to="/register">Register</Link>
+      <p className="lead-text">
+        Don't have an account? <Link to="/sign-up">Sign Up</Link>
       </p>
     </Fragment>
   );

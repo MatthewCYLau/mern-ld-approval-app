@@ -14,7 +14,7 @@ const Routes = () => {
     <section className="container">
       <Alert />
       <Switch>
-        <Route exact path="/register" component={Register} />
+        <Route exact path="/sign-up" component={Register} />
         <Route exact path="/login" component={Login} />
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
         <PrivateRoute exact path="/courses" component={Courses} />

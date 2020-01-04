@@ -7,10 +7,16 @@ const CourseSchema = new Schema({
     ref: "users"
   },
   name: {
-    type: String
+    type: String,
+    required: true
   },
   provider: {
-    type: String
+    type: String,
+    required: true
+  },
+  price: {
+    type: Number,
+    required: true
   },
   likes: [
     {

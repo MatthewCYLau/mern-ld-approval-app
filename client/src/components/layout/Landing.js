@@ -13,14 +13,14 @@ const Landing = ({ isAuthenticated }) => {
     <section className="landing">
       <div className="dark-overlay">
         <div className="landing-inner">
-          <h1>MERN Stack Boilerplate</h1>
-          <p>A boilerplate for building web apps with MERN stack</p>
+          <h1>SE Learning and Development Portal</h1>
+          <p>Raise request for training courses and track your learning</p>
           <div>
-            <Button className="buttons" variant="primary" href="/register">
-              Register
+            <Button className="buttons" variant="primary" href="/sign-up">
+              Sign Up
             </Button>
             <Button className="buttons" variant="light" href="/login">
-              Sign In
+              Login
             </Button>
           </div>
         </div>

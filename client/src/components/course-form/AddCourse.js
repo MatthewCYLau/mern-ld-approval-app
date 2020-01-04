@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addCourse } from "../../actions/course";
@@ -7,10 +7,11 @@ import { Form, Button } from "react-bootstrap";
 const AddCourse = ({ addCourse, history }) => {
   const [formData, setFormData] = useState({
     name: "",
-    provider: ""
+    provider: "",
+    price: 0
   });
 
-  const { name, provider } = formData;
+  const { name, provider, price } = formData;
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -22,7 +23,11 @@ const AddCourse = ({ addCourse, history }) => {
 
   return (
     <Fragment>
-      <h1>AddCourse</h1>
+      <h1 className="large text-primary">Add Course</h1>
+      <p className="lead">
+        <i className="fas fa-plus" />
+        Add a new course to request for budget approval
+      </p>
 
       <Form onSubmit={e => onSubmit(e)}>
         <Form.Group>
@@ -43,6 +48,16 @@ const AddCourse = ({ addCourse, history }) => {
             placeholder="Course Provider"
             name="provider"
             value={provider}
+            onChange={e => onChange(e)}
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Price</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Price"
+            name="price"
+            value={price}
             onChange={e => onChange(e)}
           />
         </Form.Group>

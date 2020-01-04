@@ -15,7 +15,7 @@ const CourseItem = ({
       <h3>{name}</h3>
       <p>Provider: {provider}</p>
       <p className="course-date">
-        Added on <Moment format="YYYY/MM/DD">{date}</Moment>
+        Added on <Moment format="DD/MM/YYYY">{date}</Moment>
       </p>
       <Fragment>
         <button

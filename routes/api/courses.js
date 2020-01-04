@@ -29,6 +29,7 @@ router.post(
         provider: req.body.provider,
         name: req.body.name,
         approved: req.body.approved,
+        price: req.body.price,
         user: req.user.id
       });
 
