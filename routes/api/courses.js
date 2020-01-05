@@ -116,10 +116,6 @@ router.patch("/:id", auth, async (req, res) => {
       return res.status(404).json({ msg: "Course not found" });
     }
 
-    // Check user
-    if (course.user.toString() !== req.user.id) {
-      return res.status(401).json({ msg: "User not authorized" });
-    }
     return res.status(200).json(course);
   } catch (err) {
     console.error(err.message);
