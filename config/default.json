@@ -1,4 +1,0 @@
-{
-  "mongoURI": "mongodb+srv://admin-matlau:qOL2cMYoIKrpty0T@mattewcylau-5ltcp.mongodb.net/ld-approval?retryWrites=true",
-  "jwtSecret": "mysecrettoken"
-}
