@@ -6,7 +6,7 @@ import CourseItem from "./CourseItem";
 import { getCourses } from "../../actions/course";
 import { ListGroup } from "react-bootstrap";
 
-const Courses = ({ getCourses, course: { courses, loading }, history }) => {
+const Courses = ({ getCourses, course: { courses, loading }, ...rest }) => {
   useEffect(() => {
     getCourses();
   }, [getCourses]);
@@ -23,7 +23,7 @@ const Courses = ({ getCourses, course: { courses, loading }, history }) => {
       <div className="courses">
         <ListGroup>
           {courses.map(course => (
-            <CourseItem key={course._id} course={course} history={history} />
+            <CourseItem key={course._id} course={course} {...rest} />
           ))}
         </ListGroup>
       </div>
