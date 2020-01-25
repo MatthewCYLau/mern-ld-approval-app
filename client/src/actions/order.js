@@ -64,7 +64,6 @@ export const deleteORDER = id => async dispatch => {
 
 // Add order
 export const addOrder = (courseId, history) => async dispatch => {
-  console.log("placed");
   const formData = {
     course: courseId
   };

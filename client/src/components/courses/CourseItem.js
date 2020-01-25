@@ -9,6 +9,7 @@ import { addOrder } from "../../actions/order";
 const CourseItem = ({
   addLike,
   removeLike,
+  addOrder,
   history,
   course: { _id, name, provider, likes }
 }) => {
@@ -55,6 +56,8 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, { addLike, removeLike, addOrder })(
-  CourseItem
-);
+export default connect(mapStateToProps, {
+  addLike,
+  removeLike,
+  addOrder
+})(CourseItem);
