@@ -55,21 +55,6 @@ router.get("/", auth, async (req, res) => {
   }
 });
 
-// @route    GET api/courses
-// @desc     Get my courses
-// @access   Private
-router.get("/me", auth, async (req, res) => {
-  try {
-    const courses = await Course.find({
-      user: req.user.id
-    });
-    res.json(courses);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server Error");
-  }
-});
-
 // @route    GET api/courses/:id
 // @desc     Get course by ID
 // @access   Private
@@ -133,11 +118,6 @@ router.delete("/:id", auth, async (req, res) => {
     // Check for ObjectId format and course
     if (!req.params.id.match(/^[0-9a-fA-F]{24}$/) || !course) {
       return res.status(404).json({ msg: "Course not found" });
-    }
-
-    // Check user
-    if (course.user.toString() !== req.user.id) {
-      return res.status(401).json({ msg: "User not authorized" });
     }
 
     await course.remove();
