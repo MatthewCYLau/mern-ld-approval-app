@@ -26,7 +26,7 @@ const AddCourse = ({ addCourse, history }) => {
       <h1 className="large text-primary">Add Course</h1>
       <p className="lead">
         <i className="fas fa-plus" />
-        Add a new course to request for budget approval
+        Add a new course recommendation
       </p>
 
       <Form onSubmit={e => onSubmit(e)}>

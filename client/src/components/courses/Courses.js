@@ -18,7 +18,7 @@ const Courses = ({ getCourses, course: { courses, loading } }) => {
       <h1 className="large text-primary">All Courses</h1>
       <p className="lead">
         <i className="fas fa-book-open" />
-        View all courses enrolled by SE practitioners
+        View all courses recommended by SE practitioners
       </p>
       <div className="courses">
         <ListGroup>
