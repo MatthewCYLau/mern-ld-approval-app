@@ -8,6 +8,17 @@ const Order = require("../../models/Order");
 // @access   Private
 router.post("/", auth, async (req, res) => {
   try {
+    // Check if the course has already been applied
+    const orders = await Order.find({
+      user: req.user.id
+    });
+    if (
+      orders.filter(order => order.course.toString() === req.body.course)
+        .length > 0
+    ) {
+      return res.status(400).json({ msg: "Course already applied" });
+    }
+
     const newOrder = new Order({
       user: req.user.id,
       course: req.body.course,

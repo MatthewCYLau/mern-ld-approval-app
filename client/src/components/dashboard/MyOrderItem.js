@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Moment from "react-moment";
 import { ListGroup } from "react-bootstrap";
@@ -6,16 +6,14 @@ import { connect } from "react-redux";
 import { addLike, removeLike } from "../../actions/course";
 import { Badge } from "react-bootstrap";
 
-const CourseItem = ({
-  course: { _id, name, provider, date, approved, price }
-}) => (
+const OrderItem = ({ order: { course, date, approved } }) => (
   <div>
     <ListGroup.Item>
-      <h3>{name}</h3>
-      <p>Provider: {provider}</p>
-      <p>Price: {price}</p>
-      <p className="course-date">
-        Added on <Moment format="DD/MM/YYYY">{date}</Moment>
+      <h3>{course.name}</h3>
+      <p>Provider: {course.provider}</p>
+      <p>Price: {course.price}</p>
+      <p>
+        Applied on <Moment format="DD/MM/YYYY">{date}</Moment>
       </p>
 
       {approved ? (
@@ -27,12 +25,12 @@ const CourseItem = ({
   </div>
 );
 
-CourseItem.defaultProps = {
+OrderItem.defaultProps = {
   showActions: true
 };
 
-CourseItem.propTypes = {
-  course: PropTypes.object.isRequired,
+OrderItem.propTypes = {
+  order: PropTypes.object.isRequired,
   addLike: PropTypes.func.isRequired,
   removeLike: PropTypes.func.isRequired
 };
@@ -41,4 +39,4 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, { addLike, removeLike })(CourseItem);
+export default connect(mapStateToProps, { addLike, removeLike })(OrderItem);

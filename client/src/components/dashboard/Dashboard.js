@@ -1,18 +1,18 @@
 import React, { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import MyCourseItem from "./MyCourseItem";
-import { getMyCourses } from "../../actions/course";
+import MyOrderItem from "./MyOrderItem";
+import { getMyOrders } from "../../actions/order";
 import { ListGroup } from "react-bootstrap";
 
 const Dashboard = ({
-  getMyCourses,
-  course: { courses, loading },
+  getMyOrders,
+  order: { orders, loading },
   auth: { user }
 }) => {
   useEffect(() => {
-    getMyCourses();
-  }, [getMyCourses]);
+    getMyOrders();
+  }, [getMyOrders]);
   return (
     <Fragment>
       <h1 className="large text-primary">Dashboard</h1>
@@ -20,8 +20,8 @@ const Dashboard = ({
         <i className="fas fa-user" /> Welcome {user && user.name}
       </p>
       <ListGroup>
-        {courses.map(course => (
-          <MyCourseItem key={course._id} course={course} />
+        {orders.map(order => (
+          <MyOrderItem key={order._id} order={order} />
         ))}
       </ListGroup>
     </Fragment>
@@ -30,13 +30,13 @@ const Dashboard = ({
 
 Dashboard.propTypes = {
   auth: PropTypes.object.isRequired,
-  getMyCourses: PropTypes.func.isRequired,
-  course: PropTypes.object.isRequired
+  getMyOrders: PropTypes.func.isRequired,
+  order: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
   auth: state.auth,
-  course: state.course
+  order: state.order
 });
 
-export default connect(mapStateToProps, { getMyCourses })(Dashboard);
+export default connect(mapStateToProps, { getMyOrders })(Dashboard);

@@ -17,10 +17,6 @@
   text-align: center;
 }
 
-.buttons {
-  margin: 0 0.5rem;
-}
-
 /* Overlay */
 .dark-overlay {
   background-color: rgba(0, 0, 0, 0.7);

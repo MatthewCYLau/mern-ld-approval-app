@@ -18,7 +18,9 @@ const CourseItem = ({
       <ListGroup.Item>
         <h3>{name}</h3>
         <p>Provider: {provider}</p>
-        <button onClick={() => addOrder(_id, history)}>Apply</button>
+        <Button variant="success" onClick={() => addOrder(_id, history)}>
+          Apply
+        </Button>
         <Fragment>
           <button
             onClick={() => addLike(_id)}
