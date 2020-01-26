@@ -5,7 +5,8 @@ import {
   UPDATE_LIKES,
   DELETE_COURSE,
   ADD_COURSE,
-  GET_COURSE
+  GET_COURSE,
+  GET_APPROVED_COURSES
 } from "../actions/types";
 
 const initialState = {
@@ -21,6 +22,7 @@ export default function(state = initialState, action) {
   switch (type) {
     case GET_COURSES:
     case GET_MY_COURSES:
+    case GET_APPROVED_COURSES:
       return {
         ...state,
         courses: payload,

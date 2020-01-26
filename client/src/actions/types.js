@@ -9,6 +9,7 @@ export const LOGIN_FAIL = "LOGIN_FAIL";
 export const LOGOUT = "LOGOUT";
 export const GET_COURSES = "GET_COURSES";
 export const GET_MY_COURSES = "GET_MY_COURSES";
+export const GET_APPROVED_COURSES = "GET_APPROVED_COURSES";
 export const GET_COURSE = "GET_COURSE";
 export const COURSE_ERROR = "COURSE_ERROR";
 export const UPDATE_LIKES = "UPDATE_LIKES";

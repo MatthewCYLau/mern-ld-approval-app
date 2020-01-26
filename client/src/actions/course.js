@@ -3,6 +3,7 @@ import { setAlert } from "./alert";
 import {
   GET_COURSES,
   GET_MY_COURSES,
+  GET_APPROVED_COURSES,
   COURSE_ERROR,
   UPDATE_LIKES,
   DELETE_COURSE,
@@ -27,13 +28,13 @@ export const getCourses = () => async dispatch => {
   }
 };
 
-// Get my courses
-export const getMyCourses = () => async dispatch => {
+// Get approved courses
+export const getApprovedCourses = () => async dispatch => {
   try {
-    const res = await axios.get("/api/courses/me");
+    const res = await axios.get("/api/courses/approved");
 
     dispatch({
-      type: GET_MY_COURSES,
+      type: GET_APPROVED_COURSES,
       payload: res.data
     });
   } catch (err) {
@@ -113,7 +114,13 @@ export const addCourse = (formData, history) => async dispatch => {
       payload: res.data
     });
     history.push("/dashboard");
-    dispatch(setAlert("Course Created", "success"));
+    dispatch(
+      setAlert(
+        "Thank you for submission! Your recommendation is now under review.",
+        "success",
+        6000
+      )
+    );
   } catch (err) {
     dispatch({
       type: COURSE_ERROR,

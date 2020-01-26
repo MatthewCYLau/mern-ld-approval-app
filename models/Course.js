@@ -14,6 +14,10 @@ const CourseSchema = new Schema({
     type: Number,
     required: true
   },
+  approved: {
+    type: Boolean,
+    default: false
+  },
   likes: [
     {
       user: {

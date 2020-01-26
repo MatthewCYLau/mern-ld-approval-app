@@ -55,6 +55,21 @@ router.get("/", auth, async (req, res) => {
   }
 });
 
+// @route    GET api/courses/approved
+// @desc     Get all approved courses
+// @access   Private
+router.get("/approved", auth, async (req, res) => {
+  try {
+    const courses = await Course.find({
+      approved: true
+    }).sort({ date: -1 });
+    res.json(courses);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
+
 // @route    GET api/courses/:id
 // @desc     Get course by ID
 // @access   Private

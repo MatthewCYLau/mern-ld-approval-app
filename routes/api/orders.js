@@ -16,7 +16,9 @@ router.post("/", auth, async (req, res) => {
       orders.filter(order => order.course.toString() === req.body.course)
         .length > 0
     ) {
-      return res.status(400).json({ msg: "Course already applied" });
+      return res
+        .status(400)
+        .json({ errors: [{ msg: "Course already applied" }] });
     }
 
     const newOrder = new Order({

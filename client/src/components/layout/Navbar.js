@@ -17,7 +17,7 @@ const AppNavbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       </Nav.Link>
       <Nav.Link href="/courses">
         <i className="fas fa-book-open" />
-        All Courses
+        Course Catalogue
       </Nav.Link>
       <Nav.Link href="#!" onClick={logout}>
         <i className="fas fa-sign-out-alt" />

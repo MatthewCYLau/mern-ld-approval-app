@@ -82,8 +82,13 @@ export const addOrder = (courseId, history) => async dispatch => {
       payload: res.data
     });
     history.push("/dashboard");
-    dispatch(setAlert("Course Applied", "success"));
+    dispatch(setAlert("Course applied!", "success"));
   } catch (err) {
+    const errors = err.response.data.errors;
+
+    if (errors) {
+      errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
+    }
     dispatch({
       type: ORDER_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status }

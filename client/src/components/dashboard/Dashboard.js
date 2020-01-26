@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import MyOrderItem from "./MyOrderItem";
 import { getMyOrders } from "../../actions/order";
 import { ListGroup } from "react-bootstrap";
+import Spinner from "../layout/Spinner";
 
 const Dashboard = ({
   getMyOrders,
@@ -13,12 +14,15 @@ const Dashboard = ({
   useEffect(() => {
     getMyOrders();
   }, [getMyOrders]);
-  return (
+  return loading ? (
+    <Spinner />
+  ) : (
     <Fragment>
       <h1 className="large text-primary">Dashboard</h1>
       <p className="lead">
         <i className="fas fa-user" /> Welcome {user && user.name}
       </p>
+      <p>Here are the courses you have applied, and their approval status.</p>
       <ListGroup>
         {orders.map(order => (
           <MyOrderItem key={order._id} order={order} />
