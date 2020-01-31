@@ -35,3 +35,26 @@
 i {
   padding: 0 0.5rem;
 }
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.small-loader {
+  width: 3rem;
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.alert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-times {
+  cursor: pointer;
+}
