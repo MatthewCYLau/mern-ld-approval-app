@@ -8,10 +8,11 @@ const AddCourse = ({ addCourse, history }) => {
   const [formData, setFormData] = useState({
     name: "",
     provider: "",
+    url: "",
     price: 0
   });
 
-  const { name, provider, price } = formData;
+  const { name, provider, url, price } = formData;
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -48,6 +49,16 @@ const AddCourse = ({ addCourse, history }) => {
             placeholder="Course Provider"
             name="provider"
             value={provider}
+            onChange={e => onChange(e)}
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Course URL</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Course URL"
+            name="url"
+            value={url}
             onChange={e => onChange(e)}
           />
         </Form.Group>

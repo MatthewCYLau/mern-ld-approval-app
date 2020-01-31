@@ -11,12 +11,14 @@ const CourseItem = ({
   removeLike,
   addOrder,
   history,
-  course: { _id, name, provider, likes }
+  course: { _id, name, provider, likes, url }
 }) => {
   return (
     <div>
       <ListGroup.Item>
-        <h3>{name}</h3>
+        <a className="course-name" href={url}>
+          <h4>{name}</h4>
+        </a>
         <p>Provider: {provider}</p>
         <Button variant="success" onClick={() => addOrder(_id, history)}>
           Apply

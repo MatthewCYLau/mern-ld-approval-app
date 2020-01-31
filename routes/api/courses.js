@@ -27,6 +27,7 @@ router.post(
       const newCourse = new Course({
         provider: req.body.provider,
         name: req.body.name,
+        url: req.body.url,
         approved: req.body.approved,
         price: req.body.price,
         user: req.user.id
@@ -94,13 +95,14 @@ router.get("/:id", auth, async (req, res) => {
 // @desc     Edit a course
 // @access   Private
 router.patch("/:id", auth, async (req, res) => {
-  const { name, provider, approved } = req.body;
+  const { name, provider, url, approved } = req.body;
 
   // Build course object
   const courseFields = {};
 
   if (name) courseFields.name = name;
   if (provider) courseFields.provider = provider;
+  if (url) courseFields.url = url;
   if (approved != undefined || approved != null)
     courseFields.approved = approved;
 

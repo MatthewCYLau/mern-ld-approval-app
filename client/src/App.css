@@ -58,3 +58,7 @@ i {
 .fa-times {
   cursor: pointer;
 }
+
+.course-name {
+  color: #212529;
+}

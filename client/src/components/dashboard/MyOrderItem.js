@@ -9,7 +9,9 @@ import { Badge } from "react-bootstrap";
 const OrderItem = ({ order: { course, date, approved } }) => (
   <div>
     <ListGroup.Item>
-      <h3>{course.name}</h3>
+      <a className="course-name" href={course.url}>
+        <h4>{course.name}</h4>
+      </a>
       <p>Provider: {course.provider}</p>
       <p>Price: {course.price}</p>
       <p>
