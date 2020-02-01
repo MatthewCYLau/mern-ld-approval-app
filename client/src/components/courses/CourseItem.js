@@ -11,7 +11,7 @@ const CourseItem = ({
   removeLike,
   addOrder,
   history,
-  course: { _id, name, provider, likes, url }
+  course: { _id, name, provider, price, likes, url }
 }) => {
   return (
     <div>
@@ -20,6 +20,7 @@ const CourseItem = ({
           <h4>{name}</h4>
         </a>
         <p>Provider: {provider}</p>
+        <p>Price: {price}</p>
         <Button variant="success" onClick={() => addOrder(_id, history)}>
           Apply
         </Button>
