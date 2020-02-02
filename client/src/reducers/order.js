@@ -4,7 +4,8 @@ import {
   ORDER_ERROR,
   DELETE_ORDER,
   ADD_ORDER,
-  GET_ORDER
+  GET_ORDER,
+  APPROVE_ORDER
 } from "../actions/types";
 
 const initialState = {
@@ -35,6 +36,14 @@ export default function(state = initialState, action) {
       return {
         ...state,
         orders: [payload, ...state.orders],
+        loading: false
+      };
+    case APPROVE_ORDER:
+      return {
+        ...state,
+        orders: state.orders.map(order =>
+          order._id === payload._id ? { ...order, approved: true } : order
+        ),
         loading: false
       };
     case DELETE_ORDER:

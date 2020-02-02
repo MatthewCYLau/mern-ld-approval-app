@@ -1,12 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Moment from "react-moment";
-import { ListGroup } from "react-bootstrap";
+import { ListGroup, Button } from "react-bootstrap";
 import { connect } from "react-redux";
 import { addLike, removeLike } from "../../actions/course";
+import { approveOrder } from "../../actions/order";
 import { Badge } from "react-bootstrap";
 
-const OrderItem = ({ order: { course, date, approved } }) => (
+const OrderItem = ({
+  order: { course, date, approved, user, _id },
+  isAdmin,
+  approveOrder
+}) => (
   <div>
     <ListGroup.Item>
       <a className="course-name" href={course.url}>
@@ -17,11 +22,20 @@ const OrderItem = ({ order: { course, date, approved } }) => (
       <p>
         Applied on <Moment format="DD/MM/YYYY">{date}</Moment>
       </p>
-
+      {isAdmin && <p>{user.name}</p>}
       {approved ? (
         <Badge variant="success">Approved</Badge>
       ) : (
         <Badge variant="warning">Pending</Badge>
+      )}
+      {isAdmin && (
+        <Button
+          className="action-btn"
+          variant="success"
+          onClick={() => approveOrder(_id)}
+        >
+          Approve
+        </Button>
       )}
     </ListGroup.Item>
   </div>
@@ -34,6 +48,7 @@ OrderItem.defaultProps = {
 OrderItem.propTypes = {
   order: PropTypes.object.isRequired,
   addLike: PropTypes.func.isRequired,
+  approveOrder: PropTypes.func.isRequired,
   removeLike: PropTypes.func.isRequired
 };
 
@@ -41,4 +56,6 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, { addLike, removeLike })(OrderItem);
+export default connect(mapStateToProps, { addLike, removeLike, approveOrder })(
+  OrderItem
+);

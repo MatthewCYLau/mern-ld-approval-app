@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import MyOrderItem from "./MyOrderItem";
+import OrderItem from "./OrderItem";
 import { getMyOrders } from "../../actions/order";
 import { ListGroup } from "react-bootstrap";
 import Spinner from "../layout/Spinner";
@@ -25,7 +25,7 @@ const Dashboard = ({
       <p>Here are the courses you have applied, and their approval status.</p>
       <ListGroup>
         {orders.map(order => (
-          <MyOrderItem key={order._id} order={order} />
+          <OrderItem key={order._id} order={order} isAdmin={false} />
         ))}
       </ListGroup>
     </Fragment>

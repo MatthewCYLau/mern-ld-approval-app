@@ -6,7 +6,8 @@ import {
   ORDER_ERROR,
   DELETE_ORDER,
   ADD_ORDER,
-  GET_ORDER
+  GET_ORDER,
+  APPROVE_ORDER
 } from "./types";
 
 // Get orders
@@ -44,7 +45,7 @@ export const getMyOrders = () => async dispatch => {
 };
 
 // Delete order
-export const deleteORDER = id => async dispatch => {
+export const deleteOrder = id => async dispatch => {
   try {
     await axios.delete(`/api/orders/${id}`);
 
@@ -89,6 +90,34 @@ export const addOrder = (courseId, history) => async dispatch => {
     if (errors) {
       errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
     }
+    dispatch({
+      type: ORDER_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status }
+    });
+  }
+};
+
+// Approve order
+export const approveOrder = orderId => async dispatch => {
+  try {
+    const formData = {
+      approved: true
+    };
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+    const res = await axios.patch(`/api/orders/${orderId}`, formData, config);
+
+    dispatch({
+      type: APPROVE_ORDER,
+      payload: res.data
+    });
+
+    dispatch(setAlert("Order Approved", "success"));
+  } catch (err) {
     dispatch({
       type: ORDER_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status }

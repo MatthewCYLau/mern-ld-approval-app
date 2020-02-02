@@ -21,3 +21,4 @@ export const GET_ORDER = "GET_ORDER";
 export const ORDER_ERROR = "ORDER_ERROR";
 export const DELETE_ORDER = "DELETE_ORDER";
 export const ADD_ORDER = "ADD_ORDER";
+export const APPROVE_ORDER = "APPROVE_ORDER";

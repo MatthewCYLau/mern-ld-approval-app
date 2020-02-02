@@ -41,7 +41,8 @@ router.get("/", auth, async (req, res) => {
   try {
     const orders = await Order.find()
       .sort({ date: -1 })
-      .populate({ path: "course", model: "course" });
+      .populate({ path: "course", model: "course" })
+      .populate({ path: "user", model: "user" });
     res.json(orders);
   } catch (err) {
     console.error(err.message);

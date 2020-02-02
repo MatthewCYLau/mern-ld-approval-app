@@ -62,3 +62,7 @@ i {
 .course-name {
   color: #212529;
 }
+
+.action-btn {
+  padding: 10rem;
+}
