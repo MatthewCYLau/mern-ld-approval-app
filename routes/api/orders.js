@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const auth = require("../../middleware/auth");
 const Order = require("../../models/Order");
+const { sendExpenseInstructionsEmail } = require("../../emails/account");
 
 // @route    POST api/orders
 // @desc     Create a order
@@ -27,7 +28,10 @@ router.post("/", auth, async (req, res) => {
       approved: req.body.approved
     });
     const order = await newOrder.save();
+    const user = await User.findById(req.user.id);
+
     res.json(order);
+    sendExpenseInstructionsEmail(user.email, user.name);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");
