@@ -28,10 +28,8 @@ router.post("/", auth, async (req, res) => {
       approved: req.body.approved
     });
     const order = await newOrder.save();
-    const user = await User.findById(req.user.id);
 
     res.json(order);
-    sendExpenseInstructionsEmail(user.email, user.name);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");
@@ -115,6 +113,8 @@ router.patch("/:id", auth, async (req, res) => {
       return res.status(404).json({ msg: "Order not found" });
     }
 
+    const user = await User.findById(order.user);
+    sendExpenseInstructionsEmail(user.email, user.name);
     return res.status(200).json(order);
   } catch (err) {
     console.error(err.message);
