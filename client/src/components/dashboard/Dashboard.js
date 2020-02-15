@@ -17,18 +17,20 @@ const Dashboard = ({
   return loading ? (
     <Spinner />
   ) : (
-    <Fragment>
-      <h1 className="large text-primary">Dashboard</h1>
-      <p className="lead">
-        <i className="fas fa-user" /> Welcome {user && user.name}
-      </p>
-      <p>Here are the courses you have applied, and their approval status.</p>
-      <ListGroup>
-        {orders.map(order => (
-          <OrderItem key={order._id} order={order} isAdmin={false} />
-        ))}
-      </ListGroup>
-    </Fragment>
+    <div className="container">
+      <Fragment>
+        <h1 className="large text-primary">Dashboard</h1>
+        <p className="lead">
+          <i className="fas fa-user" /> Welcome {user && user.name}
+        </p>
+        <p>Here are the courses you have applied, and their approval status.</p>
+        <ListGroup>
+          {orders.map(order => (
+            <OrderItem key={order._id} order={order} isAdmin={false} />
+          ))}
+        </ListGroup>
+      </Fragment>
+    </div>
   );
 };
 

@@ -23,60 +23,62 @@ const AddCourse = ({ addCourse, history }) => {
   };
 
   return (
-    <Fragment>
-      <h1 className="large text-primary">Add Course</h1>
-      <p className="lead">
-        <i className="fas fa-plus" />
-        Recommend a new course to the course catalogue
-      </p>
+    <div className="container">
+      <Fragment>
+        <h1 className="large text-primary">Add Course</h1>
+        <p className="lead">
+          <i className="fas fa-plus" />
+          Recommend a new course to the course catalogue
+        </p>
 
-      <Form onSubmit={e => onSubmit(e)}>
-        <Form.Group>
-          <Form.Label>Course Name</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Course Name"
-            name="name"
-            value={name}
-            onChange={e => onChange(e)}
-            required
-          />
-        </Form.Group>
-        <Form.Group>
-          <Form.Label>Course Provider</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Course Provider"
-            name="provider"
-            value={provider}
-            onChange={e => onChange(e)}
-          />
-        </Form.Group>
-        <Form.Group>
-          <Form.Label>Course URL</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Course URL"
-            name="url"
-            value={url}
-            onChange={e => onChange(e)}
-          />
-        </Form.Group>
-        <Form.Group>
-          <Form.Label>Price</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Price"
-            name="price"
-            value={price}
-            onChange={e => onChange(e)}
-          />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Add Course
-        </Button>
-      </Form>
-    </Fragment>
+        <Form onSubmit={e => onSubmit(e)}>
+          <Form.Group>
+            <Form.Label>Course Name</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Course Name"
+              name="name"
+              value={name}
+              onChange={e => onChange(e)}
+              required
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Course Provider</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Course Provider"
+              name="provider"
+              value={provider}
+              onChange={e => onChange(e)}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Course URL</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Course URL"
+              name="url"
+              value={url}
+              onChange={e => onChange(e)}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Price</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Price"
+              name="price"
+              value={price}
+              onChange={e => onChange(e)}
+            />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Add Course
+          </Button>
+        </Form>
+      </Fragment>
+    </div>
   );
 };
 

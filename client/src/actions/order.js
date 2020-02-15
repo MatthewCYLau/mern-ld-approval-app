@@ -88,7 +88,7 @@ export const addOrder = (courseId, history) => async dispatch => {
     const errors = err.response.data.errors;
 
     if (errors) {
-      errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
+      errors.forEach(error => dispatch(setAlert(error.msg, "error")));
     }
     dispatch({
       type: ORDER_ERROR,

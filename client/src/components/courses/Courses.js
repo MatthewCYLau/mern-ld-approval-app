@@ -18,20 +18,22 @@ const Courses = ({
   return loading ? (
     <Spinner />
   ) : (
-    <Fragment>
-      <h1 className="large text-primary">Course Catalogue</h1>
-      <p className="lead">
-        <i className="fas fa-book-open" />
-        View all courses recommended by SE practitioners
-      </p>
-      <div className="courses">
-        <ListGroup>
-          {courses.map(course => (
-            <CourseItem key={course._id} course={course} {...rest} />
-          ))}
-        </ListGroup>
-      </div>
-    </Fragment>
+    <div className="container">
+      <Fragment>
+        <h1 className="large text-primary">Course Catalogue</h1>
+        <p className="lead">
+          <i className="fas fa-book-open" />
+          View all courses recommended by SE practitioners
+        </p>
+        <div className="courses">
+          <ListGroup>
+            {courses.map(course => (
+              <CourseItem key={course._id} course={course} {...rest} />
+            ))}
+          </ListGroup>
+        </div>
+      </Fragment>
+    </div>
   );
 };
 
