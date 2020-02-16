@@ -7,7 +7,6 @@ import PropTypes from "prop-types";
 
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
@@ -93,7 +92,6 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   return (
     <Grid container component="main" className={classes.root}>
-      <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
@@ -177,65 +175,6 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
       </Grid>
     </Grid>
   );
-
-  // return (
-  //   <Fragment>
-  //     <h1 className="text-primary">Sign Up</h1>
-  //     <p>
-  //       <i className="fas fa-user" />
-  //       Create Your Account
-  //     </p>
-
-  //     <Form onSubmit={e => onSubmit(e)}>
-  //       <Form.Group>
-  //         <Form.Label>Name</Form.Label>
-  //         <Form.Control
-  //           type="text"
-  //           placeholder="Name"
-  //           name="name"
-  //           value={name}
-  //           onChange={e => onChange(e)}
-  //         />
-  //       </Form.Group>
-  //       <Form.Group>
-  //         <Form.Label>Email</Form.Label>
-  //         <Form.Control
-  //           type="email"
-  //           placeholder="Email Address"
-  //           name="email"
-  //           value={email}
-  //           onChange={e => onChange(e)}
-  //         />
-  //       </Form.Group>
-  //       <Form.Group>
-  //         <Form.Label>Password</Form.Label>
-  //         <Form.Control
-  //           type="password"
-  //           placeholder="Password"
-  //           name="password"
-  //           value={password}
-  //           onChange={e => onChange(e)}
-  //         />
-  //       </Form.Group>
-  //       <Form.Group>
-  //         <Form.Label>Confirm Password</Form.Label>
-  //         <Form.Control
-  //           type="password"
-  //           placeholder="Confirm Password"
-  //           name="password2"
-  //           value={password2}
-  //           onChange={e => onChange(e)}
-  //         />
-  //       </Form.Group>
-  //       <Button variant="primary" type="submit">
-  //         Sign Up
-  //       </Button>
-  //     </Form>
-  //     <p className="lead-text">
-  //       Already have an account? <Link to="/login">Login</Link>
-  //     </p>
-  //   </Fragment>
-  // );
 };
 
 Register.propTypes = {

@@ -3,6 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
 
 const Landing = ({ isAuthenticated }) => {
   if (isAuthenticated) {
@@ -15,19 +16,18 @@ const Landing = ({ isAuthenticated }) => {
         <div className="landing-inner">
           <h1>SE Learning and Development Portal</h1>
           <p>Raise request for training courses and track your learning</p>
-          <div>
-            <Button
-              className="action-btn"
-              variant="contained"
-              color="primary"
-              href="/sign-up"
-            >
-              Sign Up
-            </Button>
-            <Button className="action-btn" variant="contained" href="/login">
-              Login
-            </Button>
-          </div>
+          <Grid container spacing={2} justify="center">
+            <Grid item>
+              <Button variant="contained" color="primary" href="/sign-up">
+                Sign Up
+              </Button>
+            </Grid>
+            <Grid item>
+              <Button variant="contained" href="/login">
+                Login
+              </Button>
+            </Grid>
+          </Grid>
         </div>
       </div>
     </section>

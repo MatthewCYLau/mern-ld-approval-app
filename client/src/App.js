@@ -10,6 +10,9 @@ import store from "./store";
 import { loadUser } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
 
+//Normalise CSS for Material UI
+import CssBaseline from "@material-ui/core/CssBaseline";
+
 import "./App.css";
 
 if (localStorage.token) {
@@ -25,6 +28,7 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <Fragment>
+          <CssBaseline />
           <Navbar />
           <Switch>
             <Route exact path="/" component={Landing} />
