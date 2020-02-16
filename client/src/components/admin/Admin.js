@@ -14,18 +14,20 @@ const Admin = ({ getOrders, order: { orders, loading }, auth: { user } }) => {
     <Spinner />
   ) : (
     <Fragment>
-      <h1 className="large text-primary">Admin</h1>
-      <p className="lead">
-        <i className="fas fa-user" /> Welcome Admin {user && user.name}
-      </p>
-      <p>
-        Here are the all orders across the portal, and their approval status.
-      </p>
-      <ListGroup>
-        {orders.map(order => (
-          <OrderItem key={order._id} order={order} isAdmin={true} />
-        ))}
-      </ListGroup>
+      <div className="container">
+        <h1 className="large text-primary">Admin</h1>
+        <p className="lead">
+          <i className="fas fa-user" /> Welcome Admin {user && user.name}
+        </p>
+        <p>
+          Here are the all orders across the portal, and their approval status.
+        </p>
+        <ListGroup>
+          {orders.map(order => (
+            <OrderItem key={order._id} order={order} isAdmin={true} />
+          ))}
+        </ListGroup>
+      </div>
     </Fragment>
   );
 };

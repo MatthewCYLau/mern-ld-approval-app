@@ -22,7 +22,9 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit">SE Learning and Development Portal</Link>{" "}
+      <Link color="inherit" to="/">
+        SE Learning and Development Portal
+      </Link>{" "}
       {new Date().getFullYear()}
       {"."}
     </Typography>
@@ -146,46 +148,6 @@ const Login = ({ login, isAuthenticated }) => {
       </Grid>
     </Grid>
   );
-
-  // return (
-  //   <Fragment>
-  //     <h1 className="text-primary">Login</h1>
-  //     <p>
-  //       <i className="fas fa-user" />
-  //       Login Your Account
-  //     </p>
-  //     <Form onSubmit={e => onSubmit(e)}>
-  //       <Form.Group>
-  //         <Form.Label>Email address</Form.Label>
-  //         <Form.Control
-  //           type="email"
-  //           placeholder="Email Address"
-  //           name="email"
-  //           value={email}
-  //           onChange={e => onChange(e)}
-  //           required
-  //         />
-  //       </Form.Group>
-  //       <Form.Group>
-  //         <Form.Label>Password</Form.Label>
-  //         <Form.Control
-  //           type="password"
-  //           placeholder="Password"
-  //           name="password"
-  //           value={password}
-  //           onChange={e => onChange(e)}
-  //           minLength="6"
-  //         />
-  //       </Form.Group>
-  //       <Button variant="primary" type="submit">
-  //         Login
-  //       </Button>
-  //     </Form>
-  //     <p className="lead-text">
-  //       Don't have an account? <Link to="/sign-up">Sign Up</Link>
-  //     </p>
-  //   </Fragment>
-  // );
 };
 
 Login.propTypes = {

@@ -2,49 +2,122 @@ import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../../actions/auth";
-import { Navbar, Nav } from "react-bootstrap";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import Link from "@material-ui/core/Link";
+import { makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+
+const leverageStyles = makeStyles(theme => ({
+  "@global": {
+    ul: {
+      margin: 0,
+      padding: 0,
+      listStyle: "none"
+    }
+  },
+  appBar: {
+    borderBottom: `1px solid ${theme.palette.divider}`
+  },
+  toolbar: {
+    flexWrap: "wrap"
+  },
+  toolbarTitle: {
+    flexGrow: 1
+  },
+  link: {
+    margin: theme.spacing(1, 1.5)
+  }
+}));
 
 const AppNavbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+  const classes = leverageStyles();
   const authLinks = (
-    <Nav className="mr-auto">
-      <Nav.Link href="/dashboard">
+    <nav>
+      <Link
+        variant="button"
+        color="textPrimary"
+        href="/dashboard"
+        className={classes.link}
+      >
         <i className="fas fa-user" />
         Dashboard
-      </Nav.Link>
-      <Nav.Link href="/add-course">
+      </Link>
+      <Link
+        variant="button"
+        color="textPrimary"
+        href="/add-course"
+        className={classes.link}
+      >
         <i className="fas fa-plus" />
         Add Course
-      </Nav.Link>
-      <Nav.Link href="/courses">
+      </Link>
+      <Link
+        variant="button"
+        color="textPrimary"
+        href="/courses"
+        className={classes.link}
+      >
         <i className="fas fa-book-open" />
         Course Catalogue
-      </Nav.Link>
-      <Nav.Link href="#!" onClick={logout}>
+      </Link>
+      <Link
+        variant="button"
+        color="textPrimary"
+        href="#!"
+        className={classes.link}
+        onClick={logout}
+      >
         <i className="fas fa-sign-out-alt" />
         Logout
-      </Nav.Link>
-    </Nav>
+      </Link>
+    </nav>
   );
 
   const guestLinks = (
-    <Nav className="mr-auto">
-      <Nav.Link href="/sign-up">Sign Up</Nav.Link>
-      <Nav.Link href="/login">Login</Nav.Link>
-    </Nav>
+    <nav>
+      <Link
+        variant="button"
+        color="textPrimary"
+        href="/sign-up"
+        className={classes.link}
+      >
+        Sign Up
+      </Link>
+      <Link
+        variant="button"
+        color="textPrimary"
+        href="/login"
+        className={classes.link}
+      >
+        Login
+      </Link>
+    </nav>
   );
 
   return (
-    <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="/">
-        <i className="fas fa-code" /> SE Learning and Development Portal
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
+    <AppBar
+      position="static"
+      color="default"
+      elevation={0}
+      className={classes.appBar}
+    >
+      <Toolbar className={classes.toolbar}>
+        <Typography
+          variant="h6"
+          color="inherit"
+          noWrap
+          className={classes.toolbarTitle}
+        >
+          <Link href="/" color="textPrimary">
+            <i className="fas fa-code" /> SE Learning and Development Portal
+          </Link>
+        </Typography>
         {!loading && (
           <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
         )}
-      </Navbar.Collapse>
-    </Navbar>
+      </Toolbar>
+    </AppBar>
   );
 };
 

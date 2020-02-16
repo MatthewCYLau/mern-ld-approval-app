@@ -22,7 +22,9 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit">SE Learning and Development Portal</Link>{" "}
+      <Link color="inherit" to="/">
+        SE Learning and Development Portal
+      </Link>{" "}
       {new Date().getFullYear()}
       {"."}
     </Typography>
