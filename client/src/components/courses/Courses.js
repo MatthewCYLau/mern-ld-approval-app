@@ -5,6 +5,8 @@ import Spinner from "../layout/Spinner";
 import CourseItem from "./CourseItem";
 import { getApprovedCourses } from "../../actions/course";
 import { ListGroup } from "react-bootstrap";
+import Intro from "../layout/Intro";
+
 
 const Courses = ({
   getApprovedCourses,
@@ -20,11 +22,7 @@ const Courses = ({
   ) : (
     <div className="container">
       <Fragment>
-        <h1 className="large text-primary">Course Catalogue</h1>
-        <p className="lead">
-          <i className="fas fa-book-open" />
-          View all courses recommended by SE practitioners
-        </p>
+      <Intro  componentName="Course Catalogue" componentHeadline="View all courses recommended by SE practitioners"/>
         <div className="courses">
           <ListGroup>
             {courses.map(course => (

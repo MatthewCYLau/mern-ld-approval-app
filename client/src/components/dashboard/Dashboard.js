@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import OrderItem from "./OrderItem";
+import Intro from "../layout/Intro";
 import { getMyOrders } from "../../actions/order";
 import { ListGroup } from "react-bootstrap";
 import Spinner from "../layout/Spinner";
@@ -19,11 +20,7 @@ const Dashboard = ({
   ) : (
     <div className="container">
       <Fragment>
-        <h1 className="large text-primary">Dashboard</h1>
-        <p className="lead">
-          <i className="fas fa-user" /> Welcome {user && user.name}
-        </p>
-        <p>Here are the courses you have applied, and their approval status.</p>
+        <Intro componentName="Dashboard" username={user && user.name} componentHeadline="Here are the courses you have applied, and their approval status."/>
         <ListGroup>
           {orders.map(order => (
             <OrderItem key={order._id} order={order} isAdmin={false} />

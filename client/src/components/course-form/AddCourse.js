@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, {  useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addCourse } from "../../actions/course";
@@ -7,11 +7,6 @@ import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import Link from "@material-ui/core/Link";
-import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
@@ -127,63 +122,6 @@ const AddCourse = ({ addCourse, history }) => {
     </Container>
   );
 
-  //   <div className="container">
-  //     <Fragment>
-  //       <h1 className="large text-primary">Add Course</h1>
-  //       <p className="lead">
-  //         <i className="fas fa-plus" />
-  //         Recommend a new course to the course catalogue
-  //       </p>
-
-  //       <Form onSubmit={e => onSubmit(e)}>
-  //         <Form.Group>
-  //           <Form.Label>Course Name</Form.Label>
-  //           <Form.Control
-  //             type="text"
-  //             placeholder="Course Name"
-  //             name="name"
-  //             value={name}
-  //             onChange={e => onChange(e)}
-  //             required
-  //           />
-  //         </Form.Group>
-  //         <Form.Group>
-  //           <Form.Label>Course Provider</Form.Label>
-  //           <Form.Control
-  //             type="text"
-  //             placeholder="Course Provider"
-  //             name="provider"
-  //             value={provider}
-  //             onChange={e => onChange(e)}
-  //           />
-  //         </Form.Group>
-  //         <Form.Group>
-  //           <Form.Label>Course URL</Form.Label>
-  //           <Form.Control
-  //             type="text"
-  //             placeholder="Course URL"
-  //             name="url"
-  //             value={url}
-  //             onChange={e => onChange(e)}
-  //           />
-  //         </Form.Group>
-  //         <Form.Group>
-  //           <Form.Label>Price</Form.Label>
-  //           <Form.Control
-  //             type="text"
-  //             placeholder="Price"
-  //             name="price"
-  //             value={price}
-  //             onChange={e => onChange(e)}
-  //           />
-  //         </Form.Group>
-  //         <Button variant="primary" type="submit">
-  //           Add Course
-  //         </Button>
-  //       </Form>
-  //     </Fragment>
-  //   </div>
-  // );
 };
 
 AddCourse.propTypes = {
