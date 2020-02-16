@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { addLike, removeLike } from "../../actions/course";
 import { approveOrder } from "../../actions/order";
 import { Badge } from "react-bootstrap";
+import Chip from "@material-ui/core/Chip";
 
 const OrderItem = ({
   order: { course, date, approved, user, _id },
@@ -24,9 +25,9 @@ const OrderItem = ({
       </p>
       {isAdmin && <p>{user.name}</p>}
       {approved ? (
-        <Badge variant="success">Approved</Badge>
+        <Chip color="primary" label="Approved" />
       ) : (
-        <Badge variant="warning">Pending</Badge>
+        <Chip label="Pending" />
       )}
       {isAdmin && (
         <Button
