@@ -26,7 +26,11 @@
     "request": "^2.88.0"
   },
   "devDependencies": {
+    "@restart/context": "^2.1.4",
     "concurrently": "^5.0.1",
-    "nodemon": "^2.0.1"
+    "jquery": "^1.9.1",
+    "nodemon": "^2.0.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   }
 }
