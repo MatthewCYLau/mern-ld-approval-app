@@ -57,12 +57,21 @@ const OrderItem = ({
             </Typography>
           )}
           {approved ? (
+            <div></div>
             <Chip color="primary" label="Approved" />
-          ) : (
+            <Button
+            variant="contained"
+            color="secondary"
+            onClick={() => deleteOrder(_id)}
+          >
+            Delete 
+          </Button>
+
+            </div>) : (
             <Chip label="Pending" />
           )}
           {isAdmin && !approved && (
-            <div>
+            
             <Button
               variant="outlined"
               color="primary"
@@ -71,14 +80,8 @@ const OrderItem = ({
             >
               Approve
             </Button>
-            <Button
-            variant="contained"
-            color="secondary"
-            onClick={() => deleteOrder(_id)}
-          >
-            Delete 
-          </Button>
-          </div>
+            
+          
 
           )}
         </CardContent>
