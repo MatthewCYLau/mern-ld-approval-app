@@ -27,9 +27,9 @@ const OrderItem = ({
       {approved ? (
         <Chip color="primary" label="Approved" />
       ) : (
-        <Chip label="Pending" />
+        <Chip color="secondary" label="Delete" />
       )}
-      {<Chip color="secondary" deleteIcon={<CloseIcon onClick={this.delete} />}></Chip>}
+     
       {isAdmin && (
         <Button
           className="action-btn"
