@@ -73,9 +73,23 @@ const OrderItem = ({
           </Button>
           </Grid>
           </Grid>
-            </div>) : (
+            </div>) : (<div>
+              <Grid container spacing={2} justify= "flex-start">
+              <Grid item>
             <Chip label="Pending" />
-          )}
+            </Grid>
+            <Grid item>
+            <Button
+            variant="contained"
+            color="secondary"
+            className={(classes.deleteButton)}
+            onClick={() => deleteOrder(_id)}
+          >
+            Delete 
+          </Button>
+          </Grid>
+          </Grid>
+            </div>)}
           {isAdmin && !approved && (
             
             <Button
