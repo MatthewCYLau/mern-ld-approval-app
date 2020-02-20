@@ -69,7 +69,7 @@ const OrderItem = ({
             <Button
             variant="contained"
             color="secondary"
-            className={(classes.deleteButton)}
+            className={classes.deleteButton}
             onClick={() => deleteOrder(_id)}
           >
             Delete 
@@ -85,7 +85,7 @@ const OrderItem = ({
             <Button
             variant="contained"
             color="secondary"
-            className={(classes.deleteButton)}
+            className={classes.deleteButton}
             onClick={() => deleteOrder(_id)}
           >
             Delete 
