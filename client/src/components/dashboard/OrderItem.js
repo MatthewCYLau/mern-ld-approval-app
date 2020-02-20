@@ -30,7 +30,8 @@ const leverageStyles = makeStyles({
 const OrderItem = ({
   order: { course, date, approved, user, _id },
   isAdmin,
-  approveOrder
+  approveOrder,
+  deleteOrder
 }) => {
   const classes = leverageStyles();
   return (
@@ -59,30 +60,11 @@ const OrderItem = ({
               Applied by: {user.name}
             </Typography>
           )}
-          {approved ? (
-            <div>
-              <Grid container spacing={2} justify= "flex-start">
-              <Grid item>
+            {approved ? (
             <Chip color="primary" label="Approved" />
-            </Grid>
-            <Grid item>
-            <Button
-            variant="contained"
-            color="secondary"
-            className={classes.deleteButton}
-            onClick={() => deleteOrder(_id)}
-          >
-            Delete 
-          </Button>
-          </Grid>
-          </Grid>
-            </div>) : (<div>
-              <Grid container spacing={2} justify= "flex-start">
-              <Grid item>
+          ) : (
             <Chip label="Pending" />
-            </Grid>
-            <Grid item>
-            <Button
+          ) && ( <Button
             variant="contained"
             color="secondary"
             className={classes.deleteButton}
@@ -90,9 +72,8 @@ const OrderItem = ({
           >
             Delete 
           </Button>
-          </Grid>
-          </Grid>
-            </div>)}
+          )}
+
           {isAdmin && !approved && (
             
             <Button
