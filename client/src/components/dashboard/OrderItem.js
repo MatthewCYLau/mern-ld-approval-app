@@ -49,7 +49,7 @@ const OrderItem = ({
           </CardContent>
         </CardActionArea>
         <CardContent>
-        <div>
+        
           {isAdmin && (
             <Typography variant="subtitle1" paragraph color="textSecondary">
               Applied by: {user.name}
@@ -61,6 +61,7 @@ const OrderItem = ({
             <Chip label="Pending" />
           )}
           {isAdmin && !approved && (
+            <div>
             <Button
               variant="outlined"
               color="primary"
