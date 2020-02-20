@@ -57,7 +57,7 @@ const OrderItem = ({
             </Typography>
           )}
           {approved ? (
-            <div></div>
+            <div>
             <Chip color="primary" label="Approved" />
             <Button
             variant="contained"
