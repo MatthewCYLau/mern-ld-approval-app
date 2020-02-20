@@ -58,7 +58,11 @@ const OrderItem = ({
           )}
           {approved ? (
             <div>
+              <Grid container spacing={2}>
+              <Grid item>
             <Chip color="primary" label="Approved" />
+            </Grid>
+            <Grid item>
             <Button
             variant="contained"
             color="secondary"
@@ -66,7 +70,8 @@ const OrderItem = ({
           >
             Delete 
           </Button>
-
+          </Grid>
+          </Grid>
             </div>) : (
             <Chip label="Pending" />
           )}
