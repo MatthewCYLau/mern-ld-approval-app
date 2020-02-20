@@ -28,7 +28,8 @@ const OrderItem = ({
         <Chip color="primary" label="Approved" />
       ) : (
         <Chip label="Pending" />
-      )}
+      ), 
+      (<Chip color="danger" label="Delete"/>)}
       {isAdmin && (
         <Button
           className="action-btn"
