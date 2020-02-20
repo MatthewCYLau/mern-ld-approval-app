@@ -121,13 +121,14 @@ OrderItem.propTypes = {
   order: PropTypes.object.isRequired,
   addLike: PropTypes.func.isRequired,
   approveOrder: PropTypes.func.isRequired,
-  removeLike: PropTypes.func.isRequired
+  removeLike: PropTypes.func.isRequired,
+  deleteOrder: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, { addLike, removeLike, approveOrder })(
+export default connect(mapStateToProps, { addLike, removeLike, approveOrder, deleteOrder })(
   OrderItem
 );
