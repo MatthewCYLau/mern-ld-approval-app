@@ -66,6 +66,7 @@ const OrderItem = ({
             <Button
             variant="contained"
             color="secondary"
+            className={(classes.deleteButton)}
             onClick={() => deleteOrder(_id)}
           >
             Delete 
