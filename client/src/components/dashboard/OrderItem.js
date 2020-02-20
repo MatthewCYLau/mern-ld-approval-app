@@ -68,6 +68,14 @@ const OrderItem = ({
             >
               Approve
             </Button>
+            <Button
+            variant="contained"
+            color="secondary"
+            onClick={() => deleteOrder(_id)}
+          >
+            Delete 
+          </Button>
+
           )}
         </CardContent>
       </Card>
