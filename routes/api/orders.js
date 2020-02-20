@@ -103,6 +103,14 @@ router.patch("/:id", auth, async (req, res) => {
     orderFields.approved = approved;
 
   try {
+    // Check if order is already approved
+    let originalOrder = await Order.findById(req.params.id);
+    if (originalOrder.approved === true && orderFields.approved === true) {
+      return res
+        .status(400)
+        .json({ errors: [{ msg: "Course already applied" }] });
+    }
+
     let order = await Order.findOneAndUpdate(
       { _id: req.params.id },
       orderFields,
