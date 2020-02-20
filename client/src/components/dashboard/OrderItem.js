@@ -4,6 +4,7 @@ import Moment from "react-moment";
 import { connect } from "react-redux";
 import { addLike, removeLike } from "../../actions/course";
 import { approveOrder } from "../../actions/order";
+import { deleteOrder } from "../../actions/order";
 import Chip from "@material-ui/core/Chip";
 import Button from "@material-ui/core/Button";
 
