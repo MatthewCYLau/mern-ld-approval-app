@@ -49,6 +49,7 @@ const OrderItem = ({
           </CardContent>
         </CardActionArea>
         <CardContent>
+        <div>
           {isAdmin && (
             <Typography variant="subtitle1" paragraph color="textSecondary">
               Applied by: {user.name}
@@ -75,6 +76,7 @@ const OrderItem = ({
           >
             Delete 
           </Button>
+          </div>
 
           )}
         </CardContent>
