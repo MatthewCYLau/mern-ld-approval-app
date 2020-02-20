@@ -21,6 +21,9 @@ const leverageStyles = makeStyles({
   },
   approveButton: {
     margin: "0 1rem"
+  },
+  deleteButton: {
+    margin: "0 1rem"
   }
 });
 
