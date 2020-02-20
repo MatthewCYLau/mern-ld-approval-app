@@ -58,7 +58,7 @@ const OrderItem = ({
           )}
           {approved ? (
             <div>
-              <Grid container spacing={2} justify= "center">
+              <Grid container spacing={2} justify= "flex-start">
               <Grid item>
             <Chip color="primary" label="Approved" />
             </Grid>
