@@ -23,7 +23,7 @@ const Dashboard = ({
         <Intro componentName="Dashboard" username={user && user.name} componentHeadline="Here are the courses you have applied, and their approval status."/>
         <ListGroup>
           {orders.map(order => (
-            <OrderItem key={order._id} order={order} isAdmin={true} />
+            <OrderItem key={order._id} order={order} isAdmin={false} />
           ))}
         </ListGroup>
       </Fragment>
