@@ -4,6 +4,7 @@ import Moment from "react-moment";
 import { connect } from "react-redux";
 import { addLike, removeLike } from "../../actions/course";
 import { approveOrder } from "../../actions/order";
+import { deleteOrder } from "../../actions/order";
 import Chip from "@material-ui/core/Chip";
 import Button from "@material-ui/core/Button";
 
@@ -20,13 +21,17 @@ const leverageStyles = makeStyles({
   },
   approveButton: {
     margin: "0 1rem"
+  },
+  deleteButton: {
+    margin: "0 1rem"
   }
 });
 
 const OrderItem = ({
   order: { course, date, approved, user, _id },
   isAdmin,
-  approveOrder
+  approveOrder,
+  deleteOrder
 }) => {
   const classes = leverageStyles();
   return (
@@ -49,17 +54,51 @@ const OrderItem = ({
           </CardContent>
         </CardActionArea>
         <CardContent>
+        
           {isAdmin && (
             <Typography variant="subtitle1" paragraph color="textSecondary">
               Applied by: {user.name}
             </Typography>
           )}
-          {approved ? (
-            <Chip color="primary" label="Approved" />
-          ) : (
-            <Chip label="Pending" />
+            {approved ? (
+            <div>
+            <Grid container spacing={1} justify= "flex-start">
+            <Grid item>
+          <Chip color="primary" label="Approved" />
+          </Grid>
+          <Grid item>
+          <Button
+          variant="contained"
+          color="secondary"
+          className={classes.deleteButton}
+          onClick={() => deleteOrder(_id)}
+        >
+          Delete 
+        </Button>
+        </Grid>
+        </Grid>
+          </div>) : (<div>
+            <Grid container spacing={2} justify= "flex-start">
+            <Grid item>
+          <Chip label="Pending" />
+          </Grid>
+          <Grid item>
+          <Button
+          variant="contained"
+          color="secondary"
+          className={classes.deleteButton}
+          onClick={() => deleteOrder(_id)}
+        >
+          Delete 
+        </Button>
+        </Grid>
+        </Grid>
+          </div>
+
           )}
+
           {isAdmin && !approved && (
+            
             <Button
               variant="outlined"
               color="primary"
@@ -68,6 +107,9 @@ const OrderItem = ({
             >
               Approve
             </Button>
+            
+          
+
           )}
         </CardContent>
       </Card>
@@ -83,13 +125,14 @@ OrderItem.propTypes = {
   order: PropTypes.object.isRequired,
   addLike: PropTypes.func.isRequired,
   approveOrder: PropTypes.func.isRequired,
-  removeLike: PropTypes.func.isRequired
+  removeLike: PropTypes.func.isRequired,
+  deleteOrder: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, { addLike, removeLike, approveOrder })(
+export default connect(mapStateToProps, { addLike, removeLike, approveOrder, deleteOrder })(
   OrderItem
 );
