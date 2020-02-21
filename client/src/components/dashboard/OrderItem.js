@@ -77,7 +77,7 @@ const OrderItem = ({
           )}
           {!isAdmin && !approved && (
             <Button
-              variant="contained"
+              variant="outlined"
               color="secondary"
               className={classes.deleteButton}
               onClick={() => deleteOrder(_id)}
