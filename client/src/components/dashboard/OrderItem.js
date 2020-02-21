@@ -62,7 +62,7 @@ const OrderItem = ({
           )}
             {approved ? (
             <div>
-            <Grid container spacing={2} justify= "flex-start">
+            <Grid container spacing={1} justify= "flex-start">
             <Grid item>
           <Chip color="primary" label="Approved" />
           </Grid>
@@ -78,7 +78,7 @@ const OrderItem = ({
         </Grid>
         </Grid>
           </div>) : (<div>
-            <Grid container spacing={2} justify= "flex-start">
+            <Grid container spacing={1} justify= "flex-start">
             <Grid item>
           <Chip label="Pending" />
           </Grid>
@@ -93,7 +93,7 @@ const OrderItem = ({
         </Button>
         </Grid>
         </Grid>
-          </div>)}
+          </div>
 
           )}
 

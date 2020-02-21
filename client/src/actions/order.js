@@ -51,7 +51,7 @@ export const deleteOrder = id => async dispatch => {
 
     dispatch({
       type: DELETE_ORDER,
-      payload: res.data
+      payload: id
     });
 
     dispatch(setAlert("Order Withdrawn", "success"));
