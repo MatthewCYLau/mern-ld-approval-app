@@ -47,7 +47,7 @@ export const getMyOrders = () => async dispatch => {
 // Delete order
 export const deleteOrder = id => async dispatch => {
   try {
-    const res = await axios.delete(`/api/orders/${id}`);
+    await axios.delete(`/api/orders/${id}`);
 
     dispatch({
       type: DELETE_ORDER,
