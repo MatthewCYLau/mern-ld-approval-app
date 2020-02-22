@@ -143,10 +143,11 @@ router.delete("/:id", auth, async (req, res) => {
       return res.status(404).json({ msg: "Order not found" });
     }
 
-    // Check user
-    if (order.user.toString() !== req.user.id) {
-      return res.status(401).json({ msg: "User not authorized" });
-    }
+    // TO-DO: Only allow user to delete his/her own order, or if user has role Admin
+
+    // if (order.user.toString() !== req.user.id) {
+    //   return res.status(401).json({ msg: "User not authorized" });
+    // }
 
     await order.remove();
 
