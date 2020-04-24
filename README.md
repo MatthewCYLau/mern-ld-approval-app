@@ -23,6 +23,7 @@ The configuration files should contain the following:
 {
   "mongoURI": #Your MongoDB connection URI wrapped in double-quotes
   "jwtSecret": #Any string as your JSON web token secret
+  "SENDGRID_API_KEY": #Sendgrid API key for sending email notifications
 }
 ```
 
