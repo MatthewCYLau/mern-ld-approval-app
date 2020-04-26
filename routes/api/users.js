@@ -99,4 +99,35 @@ router.post(
   }
 );
 
+// @route    EDIT api/users/:id
+// @desc     Edit a user
+// @access   Public
+router.patch("/:id", async (req, res) => {
+  const { name, email, isAdmin } = req.body;
+
+  // Build user object
+  const userFields = {};
+
+  if (name) userFields.name = name;
+  if (email) userFields.email = email;
+  if (isAdmin) userFields.isAdmin = isAdmin;
+
+  try {
+    let user = await User.findOneAndUpdate({ _id: req.params.id }, userFields, {
+      new: true,
+      upsert: true
+    });
+    // Check for ObjectId format and order
+    if (!req.params.id.match(/^[0-9a-fA-F]{24}$/) || !user) {
+      return res.status(404).json({ msg: "User not found" });
+    }
+
+    return res.status(200).json(user);
+  } catch (err) {
+    console.error(err.message);
+
+    res.status(500).send("Server Error");
+  }
+});
+
 module.exports = router;
