@@ -110,7 +110,8 @@ const AppNavbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           className={classes.toolbarTitle}
         >
           <Link href="/" color="textPrimary">
-            <i className="fas fa-code" /> SE Learning and Development Portal
+            <i className="fas fa-code" /> Systems Engineering Learning and
+            Development Portal
           </Link>
         </Typography>
         {!loading && (

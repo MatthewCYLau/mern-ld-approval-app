@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import Button from "@material-ui/core/Button";
@@ -14,7 +14,7 @@ const Landing = ({ isAuthenticated }) => {
     <section className="landing">
       <div className="dark-overlay">
         <div className="landing-inner">
-          <h1>SE Learning and Development Portal</h1>
+          <h1>Systems Engineering Learning and Development Portal</h1>
           <p>Raise request for training courses and track your learning</p>
           <Grid container spacing={2} justify="center">
             <Grid item>
