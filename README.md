@@ -34,7 +34,7 @@ The configuration files should contain the following:
 In the project root directory, run this command:
 
 ```bash
-npm run dev
+npm run dev # app starts at http://localhost:3000
 ```
 
 ## Heroku Deployment
@@ -49,12 +49,15 @@ git push heroku master #Deploy your app to Heroku
 
 ## FAQ
 
-If proxy error observed, run this command:
+If you encounter proxy error when accessing front-end app, first connect to backend server by running this command:
 
 ```bash
-npm run server
+npm run server # backend server starts at http://localhost:5000
 ```
-and connect to locally running back-end server via localhost port 5000, use Postman to verify backend connection exists
+
+Afterwards, authenticate yourself via Postman, before try access front-end at `http://localhost:3000`
+
+Download Postman collection [here](https://www.getpostman.com/collections/dde301518dbbc459a8cc)
 
 ## Contributing
 
