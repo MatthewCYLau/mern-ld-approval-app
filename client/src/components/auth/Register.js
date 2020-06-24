@@ -21,7 +21,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
       <Link color="inherit" to="/">
-        SE Learning and Development Portal
+        Systems Engineering Learning and Development Portal
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}

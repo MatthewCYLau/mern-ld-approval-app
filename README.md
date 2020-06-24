@@ -1,6 +1,8 @@
-# SE Learning and Development Portal
+# Systems Engineering Learning and Development Portal
 
-A portal app to raise request for training courses, inspired by [this](https://github.com/bradtraversy/devconnector_2.0) project by Brad Traversy.
+A portal app to raise request for training courses, inspired by [this](https://github.com/bradtraversy/devconnector_2.0) project by Brad Traversy
+
+App URL [here](https://se-ld-portal.herokuapp.com/)
 
 ## Installation
 
@@ -23,6 +25,7 @@ The configuration files should contain the following:
 {
   "mongoURI": #Your MongoDB connection URI wrapped in double-quotes
   "jwtSecret": #Any string as your JSON web token secret
+  "SENDGRID_API_KEY": #Sendgrid API key for sending email notifications
 }
 ```
 
