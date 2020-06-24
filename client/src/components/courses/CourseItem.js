@@ -1,7 +1,5 @@
-import React, { Fragment, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import Moment from "react-moment";
-import { ListGroup } from "react-bootstrap";
 import { connect } from "react-redux";
 import { addLike, removeLike } from "../../actions/course";
 import { addOrder } from "../../actions/order";

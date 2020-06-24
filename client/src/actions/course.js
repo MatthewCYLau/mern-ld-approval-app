@@ -2,7 +2,6 @@ import axios from "axios";
 import { setAlert } from "./alert";
 import {
   GET_COURSES,
-  GET_MY_COURSES,
   GET_APPROVED_COURSES,
   COURSE_ERROR,
   UPDATE_LIKES,
