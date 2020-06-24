@@ -44,6 +44,15 @@ git push heroku master #Deploy your app to Heroku
 
 ```
 
+## FAQ
+
+If proxy error observed, run this command:
+
+```bash
+npm run server
+```
+and connect to locally running back-end server via localhost port 5000, use Postman to verify backend connection exists
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
