@@ -49,13 +49,13 @@ git push heroku master #Deploy your app to Heroku
 
 ## FAQ
 
-If you encounter proxy error when accessing front-end app, first connect to backend server by running this command:
+If you encounter proxy error when accessing app, stop the app before connecting to backend server by running this command:
 
 ```bash
 npm run server # backend server starts at http://localhost:5000
 ```
 
-Afterwards, authenticate yourself via Postman, before try access front-end at `http://localhost:3000`
+Then, authenticate yourself via Postman before stopping the server. Afterwards start app again and try access app at `http://localhost:3000`
 
 Download Postman collection [here](https://www.getpostman.com/collections/dde301518dbbc459a8cc)
 
